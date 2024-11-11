@@ -17,10 +17,10 @@ async function onclickhandler() {
 }
 
 return (
-    <div style={{display:"flex",gap:2,marginBottom:"2px"}}> 
-    <button style={{backgroundColor:"red",padding:"0.1rem 0.2rem",color:"white"}} onClick={onclickhandler}>Delete</button>
-    <div style={{backgroundColor:'black', color:'white', padding:'4px',width:"100%"}}>{title}</div>
-    <Link to={`/todo/${to}`} style={{backgroundColor:"blue",padding:"0.1rem 0.2rem",color:"white",textDecoration:"none"}}>edit</Link>
+    <div className="flex gap-2 justify-between items-center mt-1 bg-gray-100 p-2 w-full"> 
+    <button onClick={onclickhandler} className="bg-red-400 hover:bg-red-300 rounded p-1 text-white">Del</button>
+    <div >{title}</div>
+    <Link to={`/todo/${to}`} className="cursor:pointer bg-green-400 hover:bg-green-300 rounded p-1 text-white">edit</Link>
     </div>
 )
 }

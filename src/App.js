@@ -79,6 +79,10 @@ try{
   return (
    <div>
       <BrowserRouter>
+      <div className='bg-black p-4 text-white flex justify-center items-center gap-2'>
+        <Link to={'/'} className='hover:text-red-400'>Todos</Link>
+        <Link to={'/login'} className='hover:text-red-400'>Login</Link>
+      </div>
       <Routes>
         <Route path='/' element={<Main todos={todos} onclickhandler={onclickhandler} settodo={settodo} gettodos={gettodos}/>}/>
         <Route path='/todo/:id' element={<Updatetodo gettodos={gettodos}/>}/>

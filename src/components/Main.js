@@ -1,9 +1,23 @@
+import { signOut } from "../firebaseconfig"
 import { Todobar } from "./Todobar"
+import { auth } from "../firebaseconfig"
+
 
 
 
 
 export function Main({todos,onclickhandler,settodo,gettodos}){
+
+
+async function logouthandler(){
+    try{
+        await signOut(auth);
+        console.log("signout executed");
+    }catch(err){
+        console.log("some error occured")
+    }
+    
+}
 
     return (
         <div style={{display:"flex",justifyContent:"center",alignItems:"center",height:"70vh",flexDirection:'column',gap:"2",marginTop:"12rem"}}>
@@ -19,6 +33,7 @@ export function Main({todos,onclickhandler,settodo,gettodos}){
             }))
           }
           </div>
+          <button onClick={logouthandler}>Logout</button>
           </div>
     )
 }

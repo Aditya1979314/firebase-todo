@@ -6,6 +6,7 @@ import { Main } from './components/Main.js';
 import { Updatetodo } from './components/Updatetodo.js';
 import { Login } from './components/Login.js';
 import { getRedirectResult, GoogleAuthProvider, onAuthStateChanged } from 'firebase/auth';
+import { Upload } from './components/Upload.js';
 
 function App() {
 const [todo,settodo] = useState('');
@@ -82,11 +83,13 @@ try{
       <div className='bg-black p-4 text-white flex justify-center items-center gap-2'>
         <Link to={'/'} className='hover:text-red-400'>Todos</Link>
         <Link to={'/login'} className='hover:text-red-400'>Login</Link>
+        <Link to={'/upload'} className='hover:text-red-400'>upload</Link>
       </div>
       <Routes>
         <Route path='/' element={<Main todos={todos} onclickhandler={onclickhandler} settodo={settodo} gettodos={gettodos}/>}/>
         <Route path='/todo/:id' element={<Updatetodo gettodos={gettodos}/>}/>
         <Route path='/login' element={<Login/>}/>
+        <Route path='/upload' element={<Upload/>}/>
       </Routes>
       </BrowserRouter>
    </div>
